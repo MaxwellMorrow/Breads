@@ -14,6 +14,11 @@ const { Schema } = mongoose;
     },
   });
 
+  // helper methods 
+breadSchema.methods.getBakedBy = function(){
+  return `${this.name} was baked with love by ${this.baker}`
+}
+
 // model and export
 const Bread = mongoose.model("Bread", breadSchema);
 module.exports = Bread;
